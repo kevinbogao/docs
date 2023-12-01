@@ -30,21 +30,27 @@ export function generateMintConfig(...navigations: Array<INavigation>) {
       name: "Dashboard",
       url: "https://dashboard.mintlify.com",
     },
+
     anchors: [
       {
-        name: "Documentation",
-        icon: "book-open-cover",
-        url: "https://mintlify.com/docs",
+        name: "HRIS API",
+        icon: "users",
+        url: "hris",
       },
       {
-        name: "Community",
-        icon: "slack",
-        url: "https://mintlify.com/community",
+        name: "ATS API",
+        icon: "briefcase",
+        url: "ats",
       },
       {
-        name: "Blog",
-        icon: "newspaper",
-        url: "https://mintlify.com/blog",
+        name: "ATS-Assessment API",
+        icon: "ballot-check",
+        url: "assessment",
+      },
+      {
+        name: "Status",
+        icon: "wave-pulse",
+        url: "https://status.kombo.dev",
       },
     ],
     navigation: [

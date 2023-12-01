@@ -1,0 +1,34 @@
+---
+title: "FAQ"
+description: "Frequently Asked Questions"
+---
+
+#### Do I have to wait for the first sync to complete?
+
+Yes, during the first sync, customers will need to wait for the process to complete before accessing the latest data. The duration of the first sync depends on the amount of data being synchronized and the efficiency of the data transfer process. Kombo's system will handle the sync and can notify you when it's finished via a webhook.
+
+#### How long does the first sync take?
+
+The duration of the first sync can vary based on factors such as the volume of data (which is influenced by [your scopes](/scopes)), network conditions, and the bulk export capabilities of the target system's API.
+
+Generally, you can expect initial syncs to take **just a few minutes** for most integrations. A major exception to this are syncs involving large amounts of historical data. If you, for example, connect a large ATS instance with hundreds of thousands of applications, an initial sync might take **up to several hours** depending on the system.
+
+In these cases, we'd recommend thinking about whether you can reduce the data points you're syncing and [adapting your scope config](/scopes). As a job board, you might, for example, only need to [access the applications that you created](/ats/features/application-status-tracking#syncing-only-created-candidates).
+
+#### What should I show my customers during the first sync?
+
+During the very first sync, you should display an informative message to users about the ongoing data update and reassure them that the app is actively fetching and updating data with a loading state or progress indicator.
+
+#### What happens when I change my Kombo scope configuration?
+
+The [Kombo scope configuration](/scopes) lets you control the data you read from your customers' systems and communicate this information when they are setting up their integrations.
+
+But once the connection is established, your customer will **not** be forced to accept new changes you made to the scope config. That's because changes to the scope config will often be made for purely technical reasons, like enabling a single new field we expose. In these cases, we don't want to force hundreds of end customers to reconnect their systems.
+
+Thus, when planning to make significant changes to your Kombo scopes, you should communicate this with your customers in advance and give them enough time to react.
+
+**Important note:** Most systems allow specifying specific permissions on the API credentials. If the API credentials don't grant permissions to a specific data point, changing the Kombo scope config can't expose any more data (but it will often make Kombo syncs fail because of authorization errors). In that case, you will actually have to ask your customer to enable the missing permissions on their API credentials to allow you reading those data points.
+
+#### What time zone and format does Kombo use for times and dates?
+
+We return times and dates in the UTC time zone and in the standard UTC format (ISO 8601).
