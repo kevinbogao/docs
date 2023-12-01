@@ -30,12 +30,6 @@ export function generateMintConfig(...navigations: Array<INavigation>) {
       name: "Dashboard",
       url: "https://dashboard.mintlify.com",
     },
-    tabs: [
-      {
-        name: "API Reference",
-        url: "api-reference",
-      },
-    ],
     anchors: [
       {
         name: "Documentation",
