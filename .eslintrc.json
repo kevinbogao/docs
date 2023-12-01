@@ -1,0 +1,112 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "project": ["./tsconfig.json"] },
+  "plugins": ["simple-import-sort", "react", "@typescript-eslint", "sonarjs"],
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "eslint:all",
+    "plugin:@typescript-eslint/all",
+    "plugin:react/all",
+    "prettier",
+    "plugin:sonarjs/recommended"
+  ],
+  "rules": {
+    "curly": 2,
+    "no-process-env": 2,
+    "one-var": 0,
+    "no-void": 0,
+    "camelcase": 0,
+    "sort-imports": 0,
+    "sort-keys": 0,
+    "id-length": 0,
+    "no-underscore-dangle": 0,
+    "max-lines-per-function": 0,
+    "max-lines": 0,
+    "max-statements": 0,
+    "capitalized-comments": 0,
+    "func-style": 0,
+    "class-methods-use-this": 0,
+    "no-ternary": 0,
+    "no-undefined": 0,
+    "consistent-return": 0,
+    "max-classes-per-file": 0,
+    "no-await-in-loop": 0,
+    "multiline-comment-style": 0,
+    "no-warning-comments": 0,
+    "no-plusplus": 0,
+    "no-duplicate-imports": 0,
+    "no-restricted-imports": [
+      2,
+      { "name": "next/router", "importNames": ["Router"], "message": "Please use our Router." }
+    ],
+    "quotes": [2, "double", { "avoidEscape": true }],
+    "@typescript-eslint/no-extraneous-class": 0,
+    "@typescript-eslint/no-unsafe-return": 0,
+    "@typescript-eslint/no-magic-numbers": 0,
+    "@typescript-eslint/no-unsafe-member-access": 0,
+    "@typescript-eslint/no-unsafe-call": 0,
+    "@typescript-eslint/no-unsafe-argument": 0,
+    "@typescript-eslint/prefer-readonly-parameter-types": 0,
+    "@typescript-eslint/member-ordering": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/lines-between-class-members": 0,
+    "@typescript-eslint/no-unsafe-assignment": 0,
+    "@typescript-eslint/strict-boolean-expressions": 0,
+    "@typescript-eslint/no-misused-promises": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/unbound-method": 0,
+    "@typescript-eslint/require-array-sort-compare": 0,
+    "@typescript-eslint/non-nullable-type-assertion-style": 0,
+    "@typescript-eslint/restrict-template-expressions": 0,
+    "@typescript-eslint/no-type-alias": [
+      2,
+      {
+        "allowAliases": "always",
+        "allowGenerics": "always",
+        "allowConditionalTypes": "always",
+        "allowCallbacks": "always"
+      }
+    ],
+    "@typescript-eslint/array-type": [2, { "default": "generic" }],
+    "@typescript-eslint/explicit-member-accessibility": [2, { "overrides": { "constructors": "no-public" } }],
+    "@typescript-eslint/no-confusing-void-expression": [2, { "ignoreArrowShorthand": true }],
+    "@typescript-eslint/naming-convention": [
+      2,
+      { "selector": "memberLike", "modifiers": ["private"], "format": ["camelCase"], "leadingUnderscore": "require" },
+      { "selector": "interface", "format": ["PascalCase"], "prefix": ["I"] },
+      { "selector": "typeAlias", "format": ["PascalCase"], "prefix": ["T"] }
+    ],
+    "@typescript-eslint/no-unsafe-enum-comparison": 0,
+    "react/prop-types": 0,
+    "react/jsx-no-bind": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-filename-extension": 0,
+    "react/no-unknown-property": [2, { "ignore": ["jsx", "global"] }],
+    "react/jsx-max-depth": 0,
+    "react/jsx-no-literals": 0,
+    "react/no-multi-comp": 0,
+    "react/require-default-props": 0,
+    "react/no-array-index-key": 0,
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
+    "react-hooks/exhaustive-deps": 2,
+    "react/forbid-component-props": 0,
+    "import/no-duplicates": 2,
+    "simple-import-sort/exports": 2,
+    "simple-import-sort/imports": 2,
+    "sonarjs/cognitive-complexity": 0
+  },
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": [2, { "allowExpressions": true }],
+        "@typescript-eslint/no-use-before-define": 0
+      }
+    },
+    { "files": ["./src/lib/client/*.ts", "./src/lib/client/*.tsx"], "rules": { "func-style": [2, "expression"] } }
+  ],
+  "ignorePatterns": ["*.js", "*.jsx"]
+}
