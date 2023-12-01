@@ -1,7 +1,10 @@
+import { writeFile } from "fs/promises";
+
+import { generateMintConfig } from "./src/generateMintConfig";
 import type { INavigation } from "./src/generateMintNavigation";
 import { generateMintNavigation } from "./src/generateMintNavigation";
 
-function logNavigation(navigation: INavigation): void {
+export function logNavigation(navigation: INavigation): void {
   // eslint-disable-next-line no-console
   console.log(JSON.stringify(navigation, null, 4));
 }
@@ -9,8 +12,9 @@ function logNavigation(navigation: INavigation): void {
 async function main(): Promise<void> {
   const navigation = await generateMintNavigation("./docs");
   logNavigation(navigation);
+  const mintConfig = generateMintConfig(navigation);
 
-  // introduction
+  await writeFile("mint.json", JSON.stringify(mintConfig, null, 2));
 }
 
 void main();

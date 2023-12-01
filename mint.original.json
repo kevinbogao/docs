@@ -52,35 +52,43 @@
     {
       "group": "General",
       "pages": [
+        "introduction",
         {
-          "group": "Getting Started",
+          "group": "Getting started",
           "pages": [
-            "docs/getting-started/create-integrations",
-            {
-              "group": "Foo",
-              "pages": [
-                "docs/getting-started/foo/introduction"
-              ]
-            },
-            "docs/getting-started/sandbox-integrations"
+            "getting-started",
+            "getting-started/sandbox-integrations",
+            "getting-started/create-integrations",
+            "getting-started/authentication",
+            "getting-started/fetching-data",
+            "getting-started/syncing-data",
+            "getting-started/custom-fields"
           ]
         },
-        "docs/introduction"
+        "faq"
+      ]
+    },
+    {
+      "group": "Get Started",
+      "pages": ["introduction", "quickstart", "development", "lamo"]
+    },
+    {
+      "group": "Essentials",
+      "pages": [
+        "essentials/markdown",
+        "essentials/code",
+        "essentials/images",
+        "essentials/settings",
+        "essentials/navigation"
       ]
     },
     {
       "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
+      "pages": ["api-reference/introduction"]
     },
     {
       "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
-      ]
+      "pages": ["api-reference/endpoint/get", "api-reference/endpoint/create", "api-reference/endpoint/delete"]
     }
   ],
   "footerSocials": {
